@@ -72,6 +72,14 @@ def health_check():
 
 # ========== AUTHENTICATION ENDPOINTS ==========
 
+@app.options("/api/auth/register", tags=["auth"])
+def options_register():
+    """PUBLIC_INTERFACE
+    Handle CORS preflight OPTIONS request for user registration.
+    Returns 200 and allows browser to proceed with POST.
+    """
+    return {}  # FastAPI with CORSMiddleware will add the appropriate headers
+
 @app.post("/api/auth/register", response_model=User, tags=["auth"])
 def register_user(user_data: UserCreate):
     """PUBLIC_INTERFACE
