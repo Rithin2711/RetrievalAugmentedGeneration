@@ -101,6 +101,14 @@ def register_user(user_data: UserCreate):
     """
     return create_user(user_data)
 
+@app.options("/api/auth/login", tags=["auth"])
+def options_login():
+    """PUBLIC_INTERFACE
+    Handle CORS preflight OPTIONS request for user login.
+    Returns 200 and allows browser to proceed with POST.
+    """
+    return {}  # FastAPI with CORSMiddleware will add the appropriate headers
+
 @app.post("/api/auth/login", response_model=Token, tags=["auth"])
 def login_user(credentials: UserLogin):
     """PUBLIC_INTERFACE
