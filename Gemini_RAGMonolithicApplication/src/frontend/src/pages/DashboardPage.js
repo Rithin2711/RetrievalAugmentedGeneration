@@ -6,7 +6,7 @@ import DocumentUpload from '../components/DocumentUpload';
 import DocumentList from '../components/DocumentList';
 import ChatInterface from '../components/ChatInterface';
 import SessionList from '../components/SessionList';
-import { documentsAPI, chatAPI } from '../services/api';
+import { documentsAPI, chatAPI, authAPI } from '../services/api';
 
 const DashboardContainer = styled.div`
   max-width: 1400px;
@@ -18,6 +18,31 @@ const DashboardContainer = styled.div`
 const WelcomeHeader = styled.div`
   text-align: center;
   margin-bottom: 32px;
+  position: relative;
+`;
+
+const LogoutButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: #c82333;
+  }
+
+  &:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+  }
 `;
 
 const Title = styled.h1`
@@ -105,7 +130,7 @@ const StatLabel = styled.div`
 
 // PUBLIC_INTERFACE
 const DashboardPage = () => {
-  const { user, loading: authLoading } = useAuth();
+  const { user, loading: authLoading, logout } = useAuth();
   const navigate = useNavigate();
   const [documents, setDocuments] = useState([]);
   const [sessions, setSessions] = useState([]);
@@ -113,6 +138,7 @@ const DashboardPage = () => {
   const [currentSession, setCurrentSession] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [loggingOut, setLoggingOut] = useState(false);
 
   useEffect(() => {
     if (!authLoading && !user) {
@@ -197,6 +223,21 @@ const DashboardPage = () => {
     setActiveSessionId(sessionId);
   };
 
+  const handleLogout = async () => {
+    try {
+      setLoggingOut(true);
+      // Call the backend logout endpoint
+      await authAPI.logout();
+    } catch (error) {
+      console.error('Logout API call failed:', error);
+      // Continue with frontend logout even if backend call fails
+    } finally {
+      // Clear authentication token from local storage and redirect
+      logout();
+      navigate('/login');
+    }
+  };
+
   if (authLoading || loading) {
     return (
       <DashboardContainer>
@@ -208,6 +249,9 @@ const DashboardPage = () => {
   return (
     <DashboardContainer>
       <WelcomeHeader>
+        <LogoutButton onClick={handleLogout} disabled={loggingOut}>
+          {loggingOut ? 'Logging out...' : 'Logout'}
+        </LogoutButton>
         <Title>Welcome, {user?.username}!</Title>
         <Subtitle>Upload documents and start chatting with your AI assistant</Subtitle>
       </WelcomeHeader>
