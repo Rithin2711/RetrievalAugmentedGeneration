@@ -1,0 +1,27 @@
+{
+  "id": "e070be22-cd8c-4de5-b2a3-62ae2c4afd35",
+  "title": "New Chat",
+  "user_id": "496e01ed-ee9c-4561-a886-7a7bf80c9025",
+  "document_ids": [
+    "0c98705b-0547-4726-b59a-86bba7fa2f41"
+  ],
+  "messages": [
+    {
+      "id": "a89249a8-da33-496d-93ad-cb62654210df",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2025-08-07 07:09:22.493613",
+      "metadata": null
+    },
+    {
+      "id": "f87e1809-57fc-4602-8262-a2e3dbbad703",
+      "role": "assistant",
+      "content": "Hi there! How can I help you today?",
+      "timestamp": "2025-08-07 07:09:22.837035",
+      "metadata": null
+    }
+  ],
+  "created_at": "2025-08-07 07:09:22.486065",
+  "updated_at": "2025-08-07 07:09:22.837229",
+  "is_active": true
+}

@@ -1,0 +1,25 @@
+**Web Application Requirements Document**
+
+**Overview**: This document outlines requirements for a product inventory system using Django, PostgreSQL, and React, emphasizing backend and database functionality over UI.
+
+**Functional Requirements**:
+- **User Management**: Support email/password registration/login with JWT authentication. Roles: Admin (full product CRUD) and Regular User (view/add to personal list). Store email, password, role, timestamps.
+- **Product Management**: CRUD operations for products (fields: UUID, name, description, price, stock_quantity, timestamps). Support case-insensitive name search, price/stock filtering. Validate name (max 100 chars), price (positive, max 999999.99), stock_quantity (non-negative).
+- **Data Export**: Admins can export products as CSV (product_id, name, price, stock_quantity).
+
+**Non-Functional Requirements**:
+- **Performance**: Handle 1,000 concurrent users, <2s API response.
+- **Scalability**: Support horizontal scaling, database sharding.
+- **Security**: Use HTTPS, CSRF protection, input sanitization, bcrypt for passwords.
+- **Reliability**: 99.9% uptime, daily backups.
+
+**Technical Requirements**:
+- **Backend**: Django 4.x with REST Framework. RESTful APIs with pagination, JWT (24h expiry).
+- **Database**: PostgreSQL 15.x with Users, Products, User_Products tables, indexes for search/filtering.
+- **Frontend**: React 18.x for minimal UI (product list, CRUD forms) using Axios, Tailwind CSS.
+- **Deployment**: Gunicorn/Nginx, PostgreSQL on AWS RDS, environment variables for secrets.
+
+**Constraints**: Python 3.10+, Node.js 18.x, no local file storage.
+
+**Deliverables**: Django project, database schema, React frontend, API documentation, 80% test coverage.
+

@@ -1,12 +1,16 @@
 from fastapi import FastAPI, Request, HTTPException, Depends, UploadFile, File, status
-from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime, timedelta
 import os
 import json
 import uuid
 from typing import List
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from ..models import (
     User, UserCreate, UserLogin, Token, Document, ChatRequest, ChatResponse,
@@ -17,6 +21,9 @@ from ..document_service import document_service
 from ..embedding_service import embedding_service
 from ..gemini_service import gemini_service
 from ..session_service import session_service
+
+# Ensure db/ exists and is writable at app startup
+from ..file_database import _ensure_db_dir
 
 # Create FastAPI app with metadata
 app = FastAPI(
@@ -32,8 +39,14 @@ app = FastAPI(
     ]
 )
 
+# -- Ensure db/ is created for persistent storage --
+_ensure_db_dir()
+
 # CORS middleware
+required_frontend_origin = "https://vscode-internal-17605-beta.beta01.cloud.kavia.ai:3000"
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8000").split(",")
+if required_frontend_origin not in allowed_origins:
+    allowed_origins.append(required_frontend_origin)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
@@ -64,6 +77,14 @@ def health_check():
 
 # ========== AUTHENTICATION ENDPOINTS ==========
 
+@app.options("/api/auth/register", tags=["auth"])
+def options_register():
+    """PUBLIC_INTERFACE
+    Handle CORS preflight OPTIONS request for user registration.
+    Returns 200 and allows browser to proceed with POST.
+    """
+    return {}  # FastAPI with CORSMiddleware will add the appropriate headers
+
 @app.post("/api/auth/register", response_model=User, tags=["auth"])
 def register_user(user_data: UserCreate):
     """PUBLIC_INTERFACE
@@ -79,6 +100,14 @@ def register_user(user_data: UserCreate):
         HTTPException: If username/email already exists or validation fails
     """
     return create_user(user_data)
+
+@app.options("/api/auth/login", tags=["auth"])
+def options_login():
+    """PUBLIC_INTERFACE
+    Handle CORS preflight OPTIONS request for user login.
+    Returns 200 and allows browser to proceed with POST.
+    """
+    return {}  # FastAPI with CORSMiddleware will add the appropriate headers
 
 @app.post("/api/auth/login", response_model=Token, tags=["auth"])
 def login_user(credentials: UserLogin):
@@ -120,6 +149,21 @@ def get_current_user_info(current_user: User = Depends(get_current_user)):
         User: Current user information
     """
     return current_user
+
+@app.post("/api/auth/logout", tags=["auth"])
+def logout_user(current_user: User = Depends(get_current_user)):
+    """PUBLIC_INTERFACE
+    Logout the current user by invalidating their session.
+    Since this is a stateless JWT system, this endpoint primarily serves
+    to validate the token and allow the frontend to clear auth state.
+    
+    Args:
+        current_user: Authenticated user requesting logout
+        
+    Returns:
+        dict: Success message confirming logout
+    """
+    return {"message": "Successfully logged out", "success": True}
 
 # ========== DOCUMENT ENDPOINTS ==========
 

@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 // Base API configuration
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/api' 
-  : 'http://localhost:8000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://vscode-internal-17605-beta.beta01.cloud.kavia.ai/proxy/8000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -51,6 +49,11 @@ export const authAPI = {
   
   getCurrentUser: async () => {
     const response = await api.get('/auth/me');
+    return response.data;
+  },
+  
+  logout: async () => {
+    const response = await api.post('/auth/logout');
     return response.data;
   }
 };

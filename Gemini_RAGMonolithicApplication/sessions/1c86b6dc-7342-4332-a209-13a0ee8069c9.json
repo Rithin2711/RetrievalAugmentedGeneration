@@ -1,0 +1,49 @@
+{
+  "id": "1c86b6dc-7342-4332-a209-13a0ee8069c9",
+  "title": "Employee Management System Overview",
+  "user_id": "ef94666e-3df1-4366-8518-f16612702ac6",
+  "document_ids": [
+    "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9"
+  ],
+  "messages": [
+    {
+      "id": "20244346-fa15-4903-b9bd-de116288425a",
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2025-08-07 06:44:17.203569",
+      "metadata": null
+    },
+    {
+      "id": "c52f085a-ba12-4ca1-bbd0-050cb4a9effe",
+      "role": "assistant",
+      "content": "Hi there! How can I help you today?",
+      "timestamp": "2025-08-07 06:44:18.060669",
+      "metadata": null
+    },
+    {
+      "id": "53626d65-d5e0-4901-a5df-62e4c562703a",
+      "role": "user",
+      "content": "project overview of employee management",
+      "timestamp": "2025-08-07 06:44:44.152102",
+      "metadata": null
+    },
+    {
+      "id": "5360f702-0569-45d6-b08a-a0dc2767237d",
+      "role": "assistant",
+      "content": "The Employee Management System (EMS) is a centralized platform designed to efficiently manage employee information within an organization.  It allows HR/admin to add, update, and delete employee data, while employees can view and manage their own profiles.  The system also handles departments, roles, attendance, and performance tracking.",
+      "timestamp": "2025-08-07 06:44:44.926368",
+      "metadata": {
+        "sources": [
+          "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9",
+          "7e66ab3e-8722-467a-b8ec-9a05e6830086",
+          "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9",
+          "7e66ab3e-8722-467a-b8ec-9a05e6830086",
+          "7e66ab3e-8722-467a-b8ec-9a05e6830086"
+        ]
+      }
+    }
+  ],
+  "created_at": "2025-08-07 06:44:17.195743",
+  "updated_at": "2025-08-07 06:44:45.269226",
+  "is_active": true
+}
