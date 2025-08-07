@@ -1,0 +1,49 @@
+.backdrop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  min-height: 56px;
+  max-height: 72px;
+  padding: 0 24px;
+  background: linear-gradient(90deg, #2436a8 0%, #aa188b 100%);
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.header-left .tataelxsi-logo {
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-slogan {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: right;
+  line-height: 1.2;
+  color: #fff;
+}
+.header-slogan .possibilities-text {
+  color: #ffd900;
+}
+.header-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 650px) {
+  .backdrop-header {
+    padding: 0 12px;
+    height: 48px;
+  }
+  .header-left .tataelxsi-logo { font-size: 16px; }
+  .header-right .header-slogan { font-size: 14px; }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "gemini-rag-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.22.3",
+    "axios": "^1.6.8",
+    "file-saver": "^2.0.5",
+    "jspdf": "^2.5.1",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "vite": "^5.2.10",
+    "@vitejs/plugin-react": "^4.2.1"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

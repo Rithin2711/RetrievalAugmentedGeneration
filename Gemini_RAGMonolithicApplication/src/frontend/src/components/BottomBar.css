@@ -1,0 +1,15 @@
+.backdrop-bottom-bar {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #2436a8 0%, #aa188b 100%);
+  /* Reversed for bottom bar possible if needed */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1300;
+}
+@media (max-width: 650px) {
+  .backdrop-bottom-bar {
+    height: 4px;
+  }
+}
