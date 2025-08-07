@@ -22,6 +22,9 @@ from ..embedding_service import embedding_service
 from ..gemini_service import gemini_service
 from ..session_service import session_service
 
+# Ensure db/ exists and is writable at app startup
+from ..file_database import _ensure_db_dir
+
 # Create FastAPI app with metadata
 app = FastAPI(
     title="Gemini RAG Chat API",
@@ -36,8 +39,10 @@ app = FastAPI(
     ]
 )
 
+# -- Ensure db/ is created for persistent storage --
+_ensure_db_dir()
+
 # CORS middleware
-# Always include the deployed frontend in allowed origins
 required_frontend_origin = "https://vscode-internal-17605-beta.beta01.cloud.kavia.ai:3000"
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8000").split(",")
 if required_frontend_origin not in allowed_origins:

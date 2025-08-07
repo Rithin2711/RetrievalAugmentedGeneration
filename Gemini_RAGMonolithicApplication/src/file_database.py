@@ -10,8 +10,17 @@ CHATS_FILE = os.path.join(DATABASE_DIR, 'chats.json')
 
 
 def _ensure_db_dir():
-    os.makedirs(DATABASE_DIR, exist_ok=True)
-
+    """Ensure the db/ directory exists. Log or raise on errors."""
+    try:
+        os.makedirs(DATABASE_DIR, exist_ok=True)
+        # Touch all main DB files if they don't exist.
+        for fp, empty in [(USERS_FILE, {}), (SESSIONS_FILE, {}), (CHATS_FILE, {})]:
+            if not os.path.exists(fp):
+                with open(fp, "w", encoding="utf-8") as f:
+                    json.dump(empty, f)
+    except Exception as e:
+        print(f"[file_database] ERROR: Could not ensure db directory or files: {e}")
+        raise
 
 def _read_json_file(path: str) -> Any:
     try:
@@ -25,9 +34,13 @@ def _read_json_file(path: str) -> Any:
 
 def _write_json_file(path: str, data: Any) -> None:
     tmp = path + '.tmp'
-    with open(tmp, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
-    os.replace(tmp, path)
+    try:
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2)
+        os.replace(tmp, path)
+    except Exception as e:
+        print(f"[file_database] ERROR: Could not write to file {path}: {e}")
+        raise
 
 
 # PUBLIC_INTERFACE
