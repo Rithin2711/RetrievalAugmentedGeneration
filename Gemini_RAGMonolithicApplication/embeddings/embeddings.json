@@ -1,0 +1,10 @@
+{
+  "chunk_ids": [
+    "d742b85e-a02f-4227-b1a7-6c038f435052",
+    "61f7e818-d387-4395-97cf-feda09e95d96",
+    "20be7512-846f-4986-9f6f-e59a787d398a",
+    "9a3ec149-f439-45e6-848f-db60e3700497"
+  ],
+  "dimension": 384,
+  "model_name": "all-MiniLM-L6-v2"
+}

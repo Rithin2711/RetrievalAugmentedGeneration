@@ -150,6 +150,21 @@ def get_current_user_info(current_user: User = Depends(get_current_user)):
     """
     return current_user
 
+@app.post("/api/auth/logout", tags=["auth"])
+def logout_user(current_user: User = Depends(get_current_user)):
+    """PUBLIC_INTERFACE
+    Logout the current user by invalidating their session.
+    Since this is a stateless JWT system, this endpoint primarily serves
+    to validate the token and allow the frontend to clear auth state.
+    
+    Args:
+        current_user: Authenticated user requesting logout
+        
+    Returns:
+        dict: Success message confirming logout
+    """
+    return {"message": "Successfully logged out", "success": True}
+
 # ========== DOCUMENT ENDPOINTS ==========
 
 @app.post("/api/documents/upload", response_model=Document, tags=["documents"])

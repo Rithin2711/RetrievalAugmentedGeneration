@@ -1,0 +1,38 @@
+{
+  "d742b85e-a02f-4227-b1a7-6c038f435052": {
+    "id": "d742b85e-a02f-4227-b1a7-6c038f435052",
+    "document_id": "7e66ab3e-8722-467a-b8ec-9a05e6830086",
+    "content": "Employee Management System - Requirements Document\n1. Project Overview\nThe Employee Management System (EMS) is a centralized platform designed to manage employee\ninformation efficiently within an organization. It provides functionality for HR/admin to add, update, and delete\nemployee data, while enabling employees to view and manage their profiles. The system also handles\ndepartments, roles, attendance, and performance tracking.\n2. Objectives\n- Maintain accurate employee records\n- Streamline HR processes (onboarding, offboarding, promotions)\n- Track attendance, leaves, and performance\n- Generate reports for analysis and compliance\n3. Scope\nThis EMS will include:\n- Employee data management\n- Department and role allocation\n- Attendance and leave tracking\n- Performance and appraisal tracking\n- Admin and employee portals with appropriate access control\n4.",
+    "chunk_index": 0,
+    "start_char": 0,
+    "end_char": 863,
+    "embedding": null
+  },
+  "61f7e818-d387-4395-97cf-feda09e95d96": {
+    "id": "61f7e818-d387-4395-97cf-feda09e95d96",
+    "document_id": "7e66ab3e-8722-467a-b8ec-9a05e6830086",
+    "content": "Stakeholders\n- Admin (HR / Management): Full access to all modules\n- Employee: Limited access to personal data and related modules\n- IT Support: For system maintenance\n5. System Features & Functional Requirements\n5.1 User Authentication & Authorization:\n- Login/Logout functionality\nEmployee Management System - Requirements Document\n- Role-based access (Admin, Employee)\n5.2 Employee Management:\n- Add/Edit/Delete employee details\n- Assign department, role, manager\n- View employee directory\n5.3 Department & Role Management:\n- Create/Edit/Delete departments\n- Assign roles to users\n- Map reporting hierarchy\n5.4 Attendance & Leave Management:\n- Mark daily attendance (in-time/out-time)\n- Apply for leaves\n- Approve/reject leaves (admin)\n5.5 Performance & Appraisal:\n- Record employee performance reviews\n- Assign goals/targets\n- View appraisal history\n5.6 Notifications & Reminders:\n- Leave approval alerts\n- Birthday/work anniversary reminders\n- System announcements\n5.",
+    "chunk_index": 1,
+    "start_char": 864,
+    "end_char": 1836,
+    "embedding": null
+  },
+  "20be7512-846f-4986-9f6f-e59a787d398a": {
+    "id": "20be7512-846f-4986-9f6f-e59a787d398a",
+    "document_id": "7e66ab3e-8722-467a-b8ec-9a05e6830086",
+    "content": "7 Reports & Analytics:\n- Attendance reports\n- Department-wise employee reports\nEmployee Management System - Requirements Document\n- Performance summaries\n6. Non-Functional Requirements\n- Security: Secure login, encrypted sensitive data\n- Scalability: Support for growing number of employees\n- Availability: 99.9% uptime\n- Usability: Intuitive UI with responsive design\n- Performance: Fast CRUD operations (<1s response time)\n7. Technology Stack (Suggested)\n- Frontend: React.js / Angular\n- Backend: Node.js / Django / Flask\n- Database: PostgreSQL / MySQL\n- Authentication: JWT / OAuth 2.0\n- Hosting: AWS / Azure / On-premise\n8. Assumptions\n- All employees have unique employee IDs\n- Admin will onboard initial data\n- Internet access is available to all users\n9. Constraints\n- System should comply with local labor laws (data privacy, etc.)\n- Must support export to CSV/PDF for reports\n10.",
+    "chunk_index": 2,
+    "start_char": 1836,
+    "end_char": 2724,
+    "embedding": null
+  },
+  "9a3ec149-f439-45e6-848f-db60e3700497": {
+    "id": "9a3ec149-f439-45e6-848f-db60e3700497",
+    "document_id": "7e66ab3e-8722-467a-b8ec-9a05e6830086",
+    "content": "Future Enhancements (Optional)\n- Biometric integration for attendance\n- Payroll integration\nEmployee Management System - Requirements Document\n- Mobile app support\n- Employee self-service chat support",
+    "chunk_index": 3,
+    "start_char": 2725,
+    "end_char": 2925,
+    "embedding": null
+  }
+}
