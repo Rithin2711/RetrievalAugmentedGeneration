@@ -1,6 +1,6 @@
-from fastapi import FastAPI, Request, HTTPException, Depends, UploadFile, File, status
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware, Request, HTTPException, Depends, UploadFile, File, status
 from fastapi.responses import HTMLResponse, FileResponse
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime, timedelta
 import os
@@ -37,7 +37,11 @@ app = FastAPI(
 )
 
 # CORS middleware
+# Always include the deployed frontend in allowed origins
+required_frontend_origin = "https://vscode-internal-17605-beta.beta01.cloud.kavia.ai:3000"
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8000").split(",")
+if required_frontend_origin not in allowed_origins:
+    allowed_origins.append(required_frontend_origin)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
