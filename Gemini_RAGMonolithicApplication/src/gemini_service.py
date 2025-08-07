@@ -2,6 +2,10 @@ import os
 from typing import List, Optional, Dict
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from .models import ChatMessage, SearchResult
 
