@@ -1,5 +1,5 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware, Request, HTTPException, Depends, UploadFile, File, status
+from fastapi import FastAPI, Request, HTTPException, Depends, UploadFile, File, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from datetime import datetime, timedelta
