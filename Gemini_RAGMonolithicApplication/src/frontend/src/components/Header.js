@@ -14,6 +14,9 @@ const ArrowIcon = () => (
   </svg>
 );
 
+// PUBLIC_INTERFACE
+// Header bar component for main layout
+
 const Header = () => (
   <header className="backdrop-header">
     <div className="header-left">

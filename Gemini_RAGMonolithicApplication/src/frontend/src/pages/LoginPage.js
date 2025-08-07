@@ -1,5 +1,8 @@
 import React from "react";
 
+// PUBLIC_INTERFACE
+// Login page placeholder
+
 const LoginPage = () => (
   <div>
     <h2>Login</h2>

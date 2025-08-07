@@ -11,13 +11,11 @@
     "jspdf": "^2.5.1",
     "styled-components": "^5.3.11"
   },
-  "devDependencies": {
-    "vite": "^5.2.10",
-    "@vitejs/plugin-react": "^4.2.1"
-  },
+  "devDependencies": {},
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   }
 }

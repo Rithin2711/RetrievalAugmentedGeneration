@@ -1,6 +1,8 @@
 import React from "react";
 
+// PUBLIC_INTERFACE
 // Placeholder - implementation with document upload, session list, etc to be added
+
 const DashboardPage = () => (
   <div>
     <h1>Gemini RAG Chat</h1>

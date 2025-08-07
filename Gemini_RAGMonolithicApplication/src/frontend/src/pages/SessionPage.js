@@ -1,5 +1,6 @@
 import React from "react";
-// TODO: Add chat UI components
+// PUBLIC_INTERFACE
+// Chat session page placeholder
 
 const SessionPage = () => (
   <div>

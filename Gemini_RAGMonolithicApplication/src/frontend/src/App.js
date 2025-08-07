@@ -7,6 +7,9 @@ import SessionPage from "./pages/SessionPage";
 import LoginPage from "./pages/LoginPage";
 import "./styles/global.css";
 
+// PUBLIC_INTERFACE
+// Main App component (compatible with Create React App)
+
 function App() {
   return (
     <div className="main-app-layout">
