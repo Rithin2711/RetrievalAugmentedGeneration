@@ -7,5 +7,32 @@
     "created_at": "2024-01-01T00:00:00.000000",
     "is_active": true,
     "password_hash": "$2b$12$e8v4eTPw1QanKWtSBrOS3u95w1thS8VcKc2BLCo/v4/KEfN1ecLUO"
+  },
+  "testuser": {
+    "id": "29d19408-ef04-474a-8bf0-cbc735a5bc0c",
+    "username": "testuser",
+    "email": "test@example.com",
+    "role": "user",
+    "created_at": "2025-08-07T05:49:50.472171",
+    "is_active": true,
+    "password_hash": "$2b$12$Ez8MZ6WG0w4Wx4WNjln6rekbdN9xGvQHB8Cbay0fR57Vz9EfQ7Sxe"
+  },
+  "apitest2": {
+    "id": "1329aabb-0022-479b-a2dd-835dc7e036b1",
+    "username": "apitest2",
+    "email": "apitest2@example.com",
+    "role": "user",
+    "created_at": "2025-08-07T05:50:21.519305",
+    "is_active": true,
+    "password_hash": "$2b$12$jX259jUkyLclk8igS7C7Yus6ufdRUbxW1INQovACvcfxuhgT/DgC."
+  },
+  "swetha": {
+    "id": "8dd2d9e7-2bef-4508-93f3-a7c5eb159cd4",
+    "username": "swetha",
+    "email": "s@gmail.com",
+    "role": "user",
+    "created_at": "2025-08-07T05:50:48.364305",
+    "is_active": true,
+    "password_hash": "$2b$12$LOaQIHO8f4N6y.8VXVgJcu70A1C3C39JV9ElypuSvgIEMkSyezZNm"
   }
 }
