@@ -34,5 +34,104 @@
     "start_char": 2725,
     "end_char": 2925,
     "embedding": null
+  },
+  "a8b32c67-5151-4d00-97bb-c8fd5c021048": {
+    "id": "a8b32c67-5151-4d00-97bb-c8fd5c021048",
+    "document_id": "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9",
+    "content": "Employee Management System - Requirements Document\n1. Project Overview\nThe Employee Management System (EMS) is a centralized platform designed to manage employee\ninformation efficiently within an organization. It provides functionality for HR/admin to add, update, and delete\nemployee data, while enabling employees to view and manage their profiles. The system also handles\ndepartments, roles, attendance, and performance tracking.\n2. Objectives\n- Maintain accurate employee records\n- Streamline HR processes (onboarding, offboarding, promotions)\n- Track attendance, leaves, and performance\n- Generate reports for analysis and compliance\n3. Scope\nThis EMS will include:\n- Employee data management\n- Department and role allocation\n- Attendance and leave tracking\n- Performance and appraisal tracking\n- Admin and employee portals with appropriate access control\n4.",
+    "chunk_index": 0,
+    "start_char": 0,
+    "end_char": 863,
+    "embedding": null
+  },
+  "c906059c-2876-4e44-9643-6f119127b8ad": {
+    "id": "c906059c-2876-4e44-9643-6f119127b8ad",
+    "document_id": "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9",
+    "content": "Stakeholders\n- Admin (HR / Management): Full access to all modules\n- Employee: Limited access to personal data and related modules\n- IT Support: For system maintenance\n5. System Features & Functional Requirements\n5.1 User Authentication & Authorization:\n- Login/Logout functionality\nEmployee Management System - Requirements Document\n- Role-based access (Admin, Employee)\n5.2 Employee Management:\n- Add/Edit/Delete employee details\n- Assign department, role, manager\n- View employee directory\n5.3 Department & Role Management:\n- Create/Edit/Delete departments\n- Assign roles to users\n- Map reporting hierarchy\n5.4 Attendance & Leave Management:\n- Mark daily attendance (in-time/out-time)\n- Apply for leaves\n- Approve/reject leaves (admin)\n5.5 Performance & Appraisal:\n- Record employee performance reviews\n- Assign goals/targets\n- View appraisal history\n5.6 Notifications & Reminders:\n- Leave approval alerts\n- Birthday/work anniversary reminders\n- System announcements\n5.",
+    "chunk_index": 1,
+    "start_char": 864,
+    "end_char": 1836,
+    "embedding": null
+  },
+  "e56a3349-86c3-40a2-b4db-9175c483aa16": {
+    "id": "e56a3349-86c3-40a2-b4db-9175c483aa16",
+    "document_id": "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9",
+    "content": "7 Reports & Analytics:\n- Attendance reports\n- Department-wise employee reports\nEmployee Management System - Requirements Document\n- Performance summaries\n6. Non-Functional Requirements\n- Security: Secure login, encrypted sensitive data\n- Scalability: Support for growing number of employees\n- Availability: 99.9% uptime\n- Usability: Intuitive UI with responsive design\n- Performance: Fast CRUD operations (<1s response time)\n7. Technology Stack (Suggested)\n- Frontend: React.js / Angular\n- Backend: Node.js / Django / Flask\n- Database: PostgreSQL / MySQL\n- Authentication: JWT / OAuth 2.0\n- Hosting: AWS / Azure / On-premise\n8. Assumptions\n- All employees have unique employee IDs\n- Admin will onboard initial data\n- Internet access is available to all users\n9. Constraints\n- System should comply with local labor laws (data privacy, etc.)\n- Must support export to CSV/PDF for reports\n10.",
+    "chunk_index": 2,
+    "start_char": 1836,
+    "end_char": 2724,
+    "embedding": null
+  },
+  "1a0927a9-8534-4857-92be-4513079adc33": {
+    "id": "1a0927a9-8534-4857-92be-4513079adc33",
+    "document_id": "8db43f8b-8a2d-4d47-b849-4ad6b61aaaa9",
+    "content": "Future Enhancements (Optional)\n- Biometric integration for attendance\n- Payroll integration\nEmployee Management System - Requirements Document\n- Mobile app support\n- Employee self-service chat support",
+    "chunk_index": 3,
+    "start_char": 2725,
+    "end_char": 2925,
+    "embedding": null
+  },
+  "bc643676-06a8-4bd4-a34d-037d69d6e4a6": {
+    "id": "bc643676-06a8-4bd4-a34d-037d69d6e4a6",
+    "document_id": "f52be491-40fe-4260-8d4b-5327560694f3",
+    "content": "Q: How do I test the user registration feature in our e-commerce application?\nA: Test for valid and invalid inputs, field validations, email format, password strength, duplicate email handling, and successful redirection to the login page upon registration.\n\nQ: What test cases should be included when testing the shopping cart module?\nA: Include adding/removing products, updating quantities, price calculations, stock validations, and session persistence across user logins.\n\nQ: How can I validate the checkout process in the application?\nA: Test address form validations, payment gateway integration, promo code application, tax calculation, and order confirmation emails.\n\nQ: What are the key scenarios for testing login functionality in our platform?\nA: Test for correct/incorrect credentials, account lockout after multiple failed attempts, \"Remember Me\" functionality, and session timeout.\n\nQ: How do I test the product search feature?",
+    "chunk_index": 0,
+    "start_char": 0,
+    "end_char": 942,
+    "embedding": null
+  },
+  "fa6e5736-dc2b-43e4-9627-6acf19012654": {
+    "id": "fa6e5736-dc2b-43e4-9627-6acf19012654",
+    "document_id": "f52be491-40fe-4260-8d4b-5327560694f3",
+    "content": "A: Validate keyword matching, filters (category, price range, brand), search speed, and handling of no results or misspelled terms.\n\nQ: What are common bugs to look for when testing the order history page?\nA: Look for incorrect order statuses, missing items, wrong dates or prices, pagination issues, and slow loading times.\n\nQ: What should I check when testing coupon or promo code functionality?\nA: Validate code application, expiration handling, usage limits, eligibility based on product or cart value, and discount calculation.\n\nQ: What\u2019s the best way to test the product recommendation engine?\nA: Verify that recommendations are relevant, update with browsing/purchase history, and render correctly across different devices.\n\nQ: What performance tests should be run on the e-commerce platform?\nA: Test load handling during sales events, response time for product pages, concurrent checkout processing, and database query optimization.\n\nQ: What security tests are important for our application?",
+    "chunk_index": 1,
+    "start_char": 943,
+    "end_char": 1942,
+    "embedding": null
+  },
+  "2f6390ee-179d-492a-9044-0b69fcde5bd1": {
+    "id": "2f6390ee-179d-492a-9044-0b69fcde5bd1",
+    "document_id": "f52be491-40fe-4260-8d4b-5327560694f3",
+    "content": "A: Conduct tests for SQL injection, XSS, CSRF, broken authentication, insecure direct object references, and ensure HTTPS is enforced.\n\nQ: How do I automate the smoke tests for the e-commerce app?\nA: Focus on login, product search, add-to-cart, checkout flow, and logout using tools like Selenium, Cypress, or Playwright.\n\nQ: What should I test on the mobile view of our web app?\nA: Test responsive layout, tap targets, scroll behavior, performance on slow networks, and touch gestures for navigation.\n\nQ: How do we test third-party payment gateway integration?\nA: Validate payment success, failure, cancel flows, fraud detection flags, and webhook response handling from the provider.\n\nQ: What logs or tools help identify issues in the checkout flow?\nA: Use browser console logs, network tab in dev tools, server logs, APM tools like New Relic or Datadog, and error tracking tools like Sentry.\n\nQ: How do I test product image uploads in the admin panel?",
+    "chunk_index": 2,
+    "start_char": 1943,
+    "end_char": 2897,
+    "embedding": null
+  },
+  "a93ad0ff-6e5f-4c78-b350-7ba3f05be4d7": {
+    "id": "a93ad0ff-6e5f-4c78-b350-7ba3f05be4d7",
+    "document_id": "f52be491-40fe-4260-8d4b-5327560694f3",
+    "content": "A: Validate file type/size restrictions, image resolution, duplicate uploads, alt-text requirement, and successful storage/display.\n\nQ: What are the test cases for the wishlist feature?\nA: Add/remove items, duplicate handling, wishlist sharing, persistence after login/logout, and stock availability updates.\n\nQ: How should we test order cancellation and refund processes?\nA: Validate cancellation window, refund timeline, payment reversal, status updates, and email notifications.\n\nQ: How do I handle flaky UI tests in our automation suite?\nA: Review synchronization (waits), element stability, network delays, dynamic IDs, and isolate browser/environment-related issues.\n\nQ: What APIs should be tested for the shopping cart service?\nA: Test add item, remove item, update quantity, get cart summary, and clear cart APIs with valid and invalid payloads.\n\nQ: How do we verify data integrity after a successful order?",
+    "chunk_index": 3,
+    "start_char": 2898,
+    "end_char": 3813,
+    "embedding": null
+  },
+  "8ae211b9-ccc1-4121-85a4-31322f454e7b": {
+    "id": "8ae211b9-ccc1-4121-85a4-31322f454e7b",
+    "document_id": "f52be491-40fe-4260-8d4b-5327560694f3",
+    "content": "A: Confirm order data is saved in the database, inventory is updated, confirmation email is triggered, and the user account shows correct order history.",
+    "chunk_index": 4,
+    "start_char": 3814,
+    "end_char": 3966,
+    "embedding": null
+  },
+  "0ba1d849-c623-4271-ac2d-c5813efb61f3": {
+    "id": "0ba1d849-c623-4271-ac2d-c5813efb61f3",
+    "document_id": "0c98705b-0547-4726-b59a-86bba7fa2f41",
+    "content": "**Web Application Requirements Document**\r\n\r\n**Overview**: This document outlines requirements for a product inventory system using Django, PostgreSQL, and React, emphasizing backend and database functionality over UI.\r\n\r\n**Functional Requirements**:\r\n- **User Management**: Support email/password registration/login with JWT authentication. Roles: Admin (full product CRUD) and Regular User (view/add to personal list). Store email, password, role, timestamps.\r\n- **Product Management**: CRUD operations for products (fields: UUID, name, description, price, stock_quantity, timestamps). Support case-insensitive name search, price/stock filtering. Validate name (max 100 chars), price (positive, max 999999.99), stock_quantity (non-negative).\r\n- **Data Export**: Admins can export products as CSV (product_id, name, price, stock_quantity).\r\n\r\n**Non-Functional Requirements**:\r\n- **Performance**: Handle 1,000 concurrent users, <2s API response.",
+    "chunk_index": 0,
+    "start_char": 0,
+    "end_char": 945,
+    "embedding": null
+  },
+  "6c2dd558-9e28-452c-ae73-eacbb5f0b489": {
+    "id": "6c2dd558-9e28-452c-ae73-eacbb5f0b489",
+    "document_id": "0c98705b-0547-4726-b59a-86bba7fa2f41",
+    "content": "- **Scalability**: Support horizontal scaling, database sharding.\r\n- **Security**: Use HTTPS, CSRF protection, input sanitization, bcrypt for passwords.\r\n- **Reliability**: 99.9% uptime, daily backups.\r\n\r\n**Technical Requirements**:\r\n- **Backend**: Django 4.x with REST Framework. RESTful APIs with pagination, JWT (24h expiry).\r\n- **Database**: PostgreSQL 15.x with Users, Products, User_Products tables, indexes for search/filtering.\r\n- **Frontend**: React 18.x for minimal UI (product list, CRUD forms) using Axios, Tailwind CSS.\r\n- **Deployment**: Gunicorn/Nginx, PostgreSQL on AWS RDS, environment variables for secrets.\r\n\r\n**Constraints**: Python 3.10+, Node.js 18.x, no local file storage.\r\n\r\n**Deliverables**: Django project, database schema, React frontend, API documentation, 80% test coverage.",
+    "chunk_index": 1,
+    "start_char": 947,
+    "end_char": 1751,
+    "embedding": null
   }
 }

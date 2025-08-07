@@ -14,5 +14,53 @@
     "updated_at": "2025-08-07 05:55:39.446643",
     "is_active": true,
     "message_count": 8
+  },
+  "1c86b6dc-7342-4332-a209-13a0ee8069c9": {
+    "user_id": "ef94666e-3df1-4366-8518-f16612702ac6",
+    "title": "Employee Management System Overview",
+    "created_at": "2025-08-07 06:44:17.195743",
+    "updated_at": "2025-08-07 06:44:45.269226",
+    "is_active": true,
+    "message_count": 4
+  },
+  "2b61bf5e-4faa-4983-b798-ba94e8b55999": {
+    "user_id": "ef94666e-3df1-4366-8518-f16612702ac6",
+    "title": "User Needs Assistance",
+    "created_at": "2025-08-07 06:45:10.057419",
+    "updated_at": "2025-08-07 06:50:08.099532",
+    "is_active": true,
+    "message_count": 6
+  },
+  "3a4df07d-e819-4417-92ae-86f51914564a": {
+    "user_id": "4fbf6c48-f7b7-4a8e-bf27-429bd1a936fc",
+    "title": "Order Tracking Bug Troubleshooting",
+    "created_at": "2025-08-07 06:55:50.576742",
+    "updated_at": "2025-08-07 06:56:22.708956",
+    "is_active": true,
+    "message_count": 4
+  },
+  "6cded542-cec1-48a1-b33f-3e427ddc05e0": {
+    "user_id": "496e01ed-ee9c-4561-a886-7a7bf80c9025",
+    "title": "Missing Document: Inquiry and Response",
+    "created_at": "2025-08-07 07:06:14.706768",
+    "updated_at": "2025-08-07 07:07:27.272402",
+    "is_active": true,
+    "message_count": 6
+  },
+  "1689fc8c-1db9-4d0e-885d-ca316658f370": {
+    "user_id": "496e01ed-ee9c-4561-a886-7a7bf80c9025",
+    "title": "Even Number Code Request & Response",
+    "created_at": "2025-08-07 07:08:07.664064",
+    "updated_at": "2025-08-07 07:08:58.207680",
+    "is_active": true,
+    "message_count": 6
+  },
+  "e070be22-cd8c-4de5-b2a3-62ae2c4afd35": {
+    "user_id": "496e01ed-ee9c-4561-a886-7a7bf80c9025",
+    "title": "New Chat",
+    "created_at": "2025-08-07 07:09:22.486065",
+    "updated_at": "2025-08-07 07:09:22.837229",
+    "is_active": true,
+    "message_count": 2
   }
 }
