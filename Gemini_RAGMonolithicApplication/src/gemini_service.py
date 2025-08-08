@@ -1,11 +1,22 @@
 import os
+import logging
+from pathlib import Path
 from typing import List, Optional, Dict
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from dotenv import load_dotenv
 
-# Load environment variables from .env file (development use)
-load_dotenv()
+# Load environment variables from .env file with robust path handling
+env_path = Path(__file__).parent.parent / ".env"
+load_dotenv(dotenv_path=env_path, override=True)
+
+# Set up logging
+logger = logging.getLogger(__name__)
+
+# Check for .env file and log warning if missing
+if not env_path.exists():
+    logger.warning(f".env file not found at {env_path}. Environment variables must be set externally.")
+    print(f"WARNING: .env file not found at {env_path}. Environment variables must be set externally.")
 
 from .models import ChatMessage, SearchResult
 
@@ -19,10 +30,18 @@ class GeminiService:
         """Initialize Gemini API service by retrieving API key from environment variables."""
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
-            raise ValueError(
-                "GEMINI_API_KEY environment variable is required. "
-                "Set this in your .env file or server environment."
+            error_msg = (
+                "GEMINI_API_KEY environment variable is required but not found. "
+                "Please ensure:\n"
+                "1. A .env file exists in the project root with GEMINI_API_KEY=your_api_key\n"
+                "2. Or set the GEMINI_API_KEY environment variable in your system\n"
+                f"3. Current .env file path: {Path(__file__).parent.parent / '.env'}"
             )
+            logger.error(error_msg)
+            print(f"ERROR: {error_msg}")
+            raise ValueError(error_msg)
+        
+        logger.info("GEMINI_API_KEY successfully loaded from environment variables")
         genai.configure(api_key=api_key)
         # Configure model
         self.model_name = "gemini-1.5-flash"
