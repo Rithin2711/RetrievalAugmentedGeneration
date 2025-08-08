@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base API configuration
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://vscode-internal-17605-beta.beta01.cloud.kavia.ai/proxy/8000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://vscode-internal-22865-beta.beta01.cloud.kavia.ai/proxy/8000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

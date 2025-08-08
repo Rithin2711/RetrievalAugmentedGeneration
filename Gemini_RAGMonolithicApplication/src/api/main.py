@@ -43,7 +43,7 @@ app = FastAPI(
 _ensure_db_dir()
 
 # CORS middleware
-required_frontend_origin = "https://vscode-internal-17605-beta.beta01.cloud.kavia.ai:3000"
+required_frontend_origin = "https://vscode-internal-22865-beta.beta01.cloud.kavia.ai:3000"
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8000").split(",")
 if required_frontend_origin not in allowed_origins:
     allowed_origins.append(required_frontend_origin)
