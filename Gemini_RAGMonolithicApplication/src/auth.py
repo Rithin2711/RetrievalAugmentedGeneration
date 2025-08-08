@@ -2,6 +2,7 @@ import os
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 from passlib.context import CryptContext
+# JWT handling (python-jose[cryptography], not the legacy jose package)
 from jose import JWTError, jwt
 from fastapi import HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials

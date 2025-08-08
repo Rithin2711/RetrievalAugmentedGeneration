@@ -48,5 +48,7 @@ scikit-learn==1.3.0
 faiss-cpu==1.7.4
 sentence-transformers==2.2.2
 bcrypt==4.0.1
-python-jose==3.3.0
+python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
+
+# DO NOT INSTALL 'jose' PACKAGE. Use only 'python-jose' (pip install python-jose[cryptography]).
